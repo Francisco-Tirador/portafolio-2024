@@ -4,6 +4,14 @@ import Skills from './Skills';
 import Projects from './Projects';
 import Contact from './Contact';
 
+import { IoRadioButtonOff } from "react-icons/io5";
+import { IoMdRadioButtonOn } from "react-icons/io";
+import { MdArrowForwardIos } from "react-icons/md";
+import { MdArrowBackIosNew } from "react-icons/md";
+
+
+
+
 export const ContenPages = () => {
   const [SliderPrincipal, setSliderPrincipal] = useState(1);
   const [Antes, setAntes] = useState(4);
@@ -57,7 +65,7 @@ export const ContenPages = () => {
     return arrayComponet.map(componente => (
       <div
         key={componente.id}
-        className={`md:px-[30px] md:py-[20px] rounded-md Resto  page overflow-y-auto
+        className={`md:px-[30px] lg:py-[20px] rounded-[20px] Resto  page overflow-y-auto flex 
             ${
                     SliderPrincipal === componente.id && Lado === 0 ? ' RotaX' :
                     SliderPrincipal === componente.id && Lado === 1 ? ' RotaY' :
@@ -74,10 +82,22 @@ export const ContenPages = () => {
 
   
   return (
-    <div ref={containerRef} className=' Rotador md:w-[70%] md:h-[90%]'>
-      <button onClick={RotacionSuma}>suma</button>
-      <button onClick={RotacionResta}>resta</button>
-      {memoPagesActive}
+    <div ref={containerRef} className='bg-red-40s0 Rotador md:w-[70%] md:h-[90%] relative flex justify-center items-center'>
+      <div className='absolute top-0 right-0 z-20 mx-3 my-6'>
+      <MdArrowForwardIos onClick={RotacionSuma} className='cursor-pointer my-2 bg-blue-950 w-[40px] h-[30px] hover:bg-secondary duration-200  p-1 rounded-sm' />
+      <MdArrowBackIosNew onClick={RotacionResta} className='cursor-pointer my-1 bg-blue-950 w-[40px] h-[30px] hover:bg-secondary duration-200  p-1 rounded-sm' />
+      
+      </div>
+
+        {memoPagesActive}
+
+        <div className='absolute bottom-0 bg-red-60s0   w-full flex justify-center items-center'>
+          {
+            arrayComponet.map(p=>(
+                SliderPrincipal==p.id?<IoMdRadioButtonOn color='#1eba0a' className='w-6 h-6'/>:<IoRadioButtonOff/>
+            ))
+          }
+        </div>
     </div>
   );
 };
