@@ -3,11 +3,11 @@ import Yo from '../assets/images/yo.jpg'
 
 const Presentation = () => {
   return (
-    <div className='md:flex flex-wrap justify-center items-center'>
+    <div className='sm:flex flex-wrap justify-center items-center'>
 
-    <div className='w-1/2 my-auto '><img className='md:w-[80%] m-auto rounded-md' src={Yo} alt="" /></div>
+    <div className='w-[80%] mx-auto sm:w-1/2 my-auto '><img className='mx-auto sm:w-[80%] m-auto rounded-md' src={Yo} alt="" /></div>
 
-       <div className='w-1/2 flex justify-center items-center flex-wrap'>
+       <div className='sm:w-1/2 flex justify-center items-center flex-wrap'>
        <h2 className='apt FirstText '>Sobre mi</h2>
         <p className='md:text-[10px] lg:text-lg px-3'>
         Hola, soy <b >Francisco Beltrán</b>, <b className='text-important'>técnico en diseño gráfico y Programador Full stack</b> , amante de la programación,

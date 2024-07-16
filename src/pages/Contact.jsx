@@ -5,13 +5,12 @@ import { FaCheckCircle } from "react-icons/fa";
 import { FaArrowsRotate } from "react-icons/fa6";
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import { toast, ToastContainer } from 'react-toastify';
 
 
 
 
 
-const Contact = () => {
+const Contact = ({alert}) => {
 
     const { handleSubmit, register, reset } = useForm()
     const [stateBtn,setStateBtn]=useState(false)
@@ -34,7 +33,10 @@ const Contact = () => {
       const url="https://65494591dd8ebcd4ab246ccd.mockapi.io/api/v1/comentarios";
       axios.post(url,dataInfo)
         .then(res=>{
-          // toast("Mensaje enviado, muchas gracias por contactarme")
+          alert({
+            message:"¡Gracias por ponerte en contacto! Te contestaré muy pronto. 😎👌",
+            type:"success"
+          })
           reset({
             message:""
           })
@@ -43,31 +45,21 @@ const Contact = () => {
             setStateBtn(false);
           }, 5000);
 
-          toast('🦄 Wow so easy!', {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            transition: Bounce,
-            });
+        
         })
         .catch(res=>{
           setStateBtn(false)
         })
   
     }
-  
+
+
   
     return (
       <>
   
-  <ToastContainer />
       <div className='flex flex-wrap justify-center items-center mx-auto'>
-        
+   
         <h2 className='apt FirstText'>Contacto</h2>
         <div className='ContenForm mt-5 w-[100%] '>
           <h3 className='textPrincipal textForm'>¡Hablemos sobre de tu idea!</h3>
@@ -95,8 +87,8 @@ const Contact = () => {
               !stateBtn?
               "Enviar":
               stateBtn==1?
-              <span class="material-symbols-outlined rotate">
-              <FaArrowsRotate/>
+              <span className="material-symbols-outlined ">
+              <FaArrowsRotate className='rotate'/>
               </span>:
               <FaCheckCircle/>
             }

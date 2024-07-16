@@ -9,6 +9,10 @@ import { IoMdRadioButtonOn } from "react-icons/io";
 import { MdArrowForwardIos } from "react-icons/md";
 import { MdArrowBackIosNew } from "react-icons/md";
 
+import { Bounce, toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { set } from 'react-hook-form';
+
 
 
 
@@ -16,13 +20,32 @@ export const ContenPages = () => {
   const [SliderPrincipal, setSliderPrincipal] = useState(1);
   const [Antes, setAntes] = useState(4);
   const [Lado, setLado] = useState(0);
+  const [bodyToast, setBodyToast] = useState({});
   const containerRef = useRef(null);
+
+  
+  useEffect(() => {
+    if(bodyToast.message){
+     ( bodyToast?.type?toast[bodyToast?.type]:toast)(bodyToast.message, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        });
+    }
+  }, [bodyToast])
+  
 
   const arrayComponet = [
     { componente: <Presentation />, id: 1 },
     { componente: <Skills />, id: 2 },
     { componente: <Projects />, id: 3 },
-    { componente: <Contact />, id: 4 },
+    { componente: <Contact alert={setBodyToast}/>, id: 4 },
   ];
 
   const RotacionSuma = () => {
@@ -58,14 +81,19 @@ export const ContenPages = () => {
     handleResize();
     window.addEventListener('resize', handleResize);
 
-    return () => window.removeEventListener('resize', handleResize);
+   window.removeEventListener('resize', handleResize);
+
+  //  setBodyToast({
+  //   message:"💚 Bienvenido a mi portafolio 💚❤️‍🔥", 
+  //  })
   }, []);
+
 
   const memoPagesActive = useMemo(() => {
     return arrayComponet.map(componente => (
       <div
         key={componente.id}
-        className={`md:px-[30px] lg:py-[20px] rounded-[20px] Resto  page overflow-y-auto flex 
+        className={`py-3 md:px-[30px] lg:py-[20px]  rounded-[20px] Resto  page overflow-y-auto flex 
             ${
                     SliderPrincipal === componente.id && Lado === 0 ? ' RotaX' :
                     SliderPrincipal === componente.id && Lado === 1 ? ' RotaY' :
@@ -82,10 +110,13 @@ export const ContenPages = () => {
 
   
   return (
-    <div ref={containerRef} className='bg-red-40s0 Rotador md:w-[70%] md:h-[90%] relative flex justify-center items-center'>
-      <div className='absolute top-0 right-0 z-20 mx-3 my-6'>
-      <MdArrowForwardIos onClick={RotacionSuma} className='cursor-pointer my-2 bg-blue-950 w-[40px] h-[30px] hover:bg-secondary duration-200  p-1 rounded-sm' />
+   
+ <>
+  <ToastContainer />
+    <div ref={containerRef} className='bg-red-40s0 Rotador w-[90%] mx-auto mt-auto md:mt-0 md:w-[70%] h-[90%] relative flex justify-center items-center '>
+      <div className='absolute top-0 right-0 z-20 sm:mx-3 my-6 w-[100%] sm:w-auto bg-resd-100 flex sm:block justify-between items-center ml'>
       <MdArrowBackIosNew onClick={RotacionResta} className='cursor-pointer my-1 bg-blue-950 w-[40px] h-[30px] hover:bg-secondary duration-200  p-1 rounded-sm' />
+      <MdArrowForwardIos onClick={RotacionSuma} className='cursor-pointer my-2 bg-blue-950 w-[40px] h-[30px] hover:bg-secondary duration-200  p-1 rounded-sm' />
       
       </div>
 
@@ -99,5 +130,6 @@ export const ContenPages = () => {
           }
         </div>
     </div>
+ </>
   );
 };
