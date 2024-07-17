@@ -38,7 +38,7 @@ const Projects = () => {
          {
           item &&
           <div className='conten-picture overflow-auto p-2 ' >
-            <IoIosCloseCircle className={"btn-close absolute left-0 top-0 m-4 w-6 h-6"} onClick={btnClose}/>
+            <IoIosCloseCircle className={"btn-close absolute left-0 top-10 md:top-0 m-4 w-6 h-6"} onClick={btnClose}/>
             <img src={item} className='ba' alt="" />
           </div>
         }
@@ -52,7 +52,7 @@ const Projects = () => {
   
           {
             ArrayProyects.map(P => (
-              <div key={P.id} className='rounded-md bg-gray-200 p-5 mx-3 my-2 sm:flex duration-300 hover:bg-third group '>
+              <div key={P.id} className='rounded-md bg-gray-200 p-5 mx-3 my-2 sm:flex duration-300 hover:bg-secondary group '>
                 <div className='w-[40%] min-w-[250px] h-[250px] rounded-[20px] relative mx-auto '>
                   <img className='fondoProyect rounded-md duration-500' src={P.imagenFondo} alt="" />
                   <img className='group-hover:top-[-40px] max-w-[80%] absolute right-0 left-0 top-[120px] m-auto duration-500' src={P.logo} alt="" />

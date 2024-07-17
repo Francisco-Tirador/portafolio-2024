@@ -25,15 +25,32 @@
 }
 
 
+.tipografy-primary {
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.honk {
+  font-family: "Honk", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "MORF" 5,
+    "SHLN" 20;
+    color: #b4cd02;
+
+}
 
 ::-moz-selection {
   color: #ffffff;
-  background: #fe2990;
+  background: #b4cd02;
 }
 
 ::selection {
   color: #ffffff;
-  background: #fe2990;
+  background: #b4cd02;
 }
 
 
@@ -44,13 +61,13 @@
 
 /* Estilo del thumb (el "mango" del scrollbar) */
 ::-webkit-scrollbar-thumb {
-  background-color: #1eba0a; /* Color de fondo del thumb */
+  background-color: #b4cd02; /* Color de fondo del thumb */
   border-radius: 6px; /* Bordes redondeados */
 }
 
 /* Estilo del track (el "rastro" del scrollbar) */
 ::-webkit-scrollbar-track {
-  background-color: #022a69;
+  background-color: #313131;
   border-radius:6px; /* Color de fondo del track */
 }
 

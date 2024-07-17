@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className='bg-gray-800 h-full w-full md:flex  justify-around items-center overflow-hidden bg-center bg-no-repeat bg-cover'
-      style={{backgroundImage:`url(https://francisco-beltran.netlify.app/assets/back3-c27e2965.jpg)`}}
+      style={{backgroundImage:`url(https://images.wallpaperscraft.com/image/single/dark_spots_texture_50355_2558x1562.jpg)`}}
     >
       
       <Header/>

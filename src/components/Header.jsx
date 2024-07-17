@@ -17,22 +17,29 @@ const Header = () => {
 
   return ( 
 <>
-<div className='bg-blue-950 md:bg-transparent w-full h-auto md:w-[20%] md:max-w-[300px] bg-green-600s md:h-[90vh] rounded-md md:border-secondary md:border-2 z-50 flex flex-wrap justify-between md:mx-auto ' style={{ backdropFilter:" blur(5px)"}}>
+<div className='bg-black md:bg-transparent w-full h-auto md:w-[20%] md:max-w-[300px] bg-green-600s md:h-[90vh] rounded-md border-secondary border-2 z-50 flex flex-wrap justify-between md:mx-auto ' style={{ backdropFilter:" blur(5px)"}}>
         <img src={logo} alt=" logo francico" className='h-[50px] w-[50px] md:h-auto md:w-auto lg:max-w-auto md:max-h-[200px] ml-2 md:mx-auto md:my-3 md:img-logo md:mt-5 md:rounded-xl md:shadow-2xl md:border md:border-secondary' />
 
         <span className='mx-auto hidden md:block'>
             <div className='my-[10%]'>
                 <p className=' m-0'>Hola Soy</p>
-                <p className='text-secondary font-bold m-0 '>Francisco Beltran</p>
+                <p className='text-secondary font-bold m-0 FirstText '>Francisco Beltran</p>
                 <p className='m-0 '>Dessarrollador Fron-End y diseñador</p>
             </div>
             <a href='https://drive.google.com/file/d/1TX0lguraXb1gXzgaT7yn0oT0QoIzYH4U/view?usp=sharing' target='_blank' className='btn-secundario '>DESCARGAR CV</a>
         </span>
 
         <div className='hidden  bg-secondary1 w-[80%] mx-auto p-3 md:flex justify-around mt-auto mb-4 '>
-          <FaGithub className='w-[20%] h-[100%] hover:text-purple-600 cursor-pointer hover:scale-105 duration-200'/>
-          <FaLinkedin className='w-[20%] h-[100%] hover:text-blue-500 cursor-pointer hover:scale-105 duration-200'/>
-          <FaSquareWhatsapp className='w-[20%] h-[100%] hover:text-secondary cursor-pointer hover:scale-105 duration-200'/>
+          <a className='w-[20%] h-[100%]' href="https://github.com/Francisco-Tirador" target='_blank'>
+          <FaGithub className='w-full h-full hover:text-purple-600 cursor-pointer hover:scale-105 duration-200'/>
+          </a>
+          <a className='w-[20%] h-[100%]' href="https://www.linkedin.com/in/francisco-beltr%C3%A1n-342a31213/" target='_blank'>
+          <FaLinkedin className='w-full h-full hover:text-blue-500 cursor-pointer hover:scale-105 duration-200'/>
+          </a>
+          <a className='w-[20%] h-[100%]' href="https://api.whatsapp.com/send/?phone=5215620397081&text=Hola%20me%20gustaria%20trabajar%20con%20tigo&type=phone_number&app_absent=0" target='_blank'>
+             <FaSquareWhatsapp className='w-full h-full hover:text-secondary cursor-pointer hover:scale-105 duration-200'/>
+          
+          </a>
         </div>
         <GiHamburgerMenu onClick={()=>setPopMenu(true)} className='w-[40px] h-[40px] my-auto mr-2 md:hidden'/>
 
@@ -44,14 +51,20 @@ const Header = () => {
      <div className='bg-gray-800 w-[350px] h-[350px]  m-auto top-0 right-0 left-0 bottom-0 rounded-full flex '>
       <span className='m-auto'>
           <div className='w-full flex justify-center mb-3'> 
+          <a  href="https://github.com/Francisco-Tirador" target='_blank'>
            <FaGithub className='w-[40px] h-[40px] hover:text-purple-600 cursor-pointer hover:scale-105 duration-200 mx-2'/>
+           </a>
+           <a  href="https://www.linkedin.com/in/francisco-beltr%C3%A1n-342a31213/" target='_blank'>
           <FaLinkedin className='w-[40px] h-[40px] hover:text-blue-500 cursor-pointer hover:scale-105 duration-200 mx-2'/>
+          </a>
+          <a  href="https://api.whatsapp.com/send/?phone=5215620397081&text=Hola%20me%20gustaria%20trabajar%20con%20tigo&type=phone_number&app_absent=0" target='_blank'>
           <FaSquareWhatsapp className='w-[40px] h-[40px] hover:text-secondary cursor-pointer hover:scale-105 duration-200 mx-2'/>
+          </a>
        </div>
-         <div className='w-full '>
+         <div className='w-full my-6'>
          <IoIosCloseCircle className={"btn-close w-[40px] h-[40px] m-auto"} onClick={()=>setPopMenu(false)}/>
          </div>
-         <a href='https://drive.google.com/file/d/1TX0lguraXb1gXzgaT7yn0oT0QoIzYH4U/view?usp=sharing' target='_blank' className='btn-secundario mt-3'>DESCARGAR CV</a>
+         <a href='https://drive.google.com/file/d/1TX0lguraXb1gXzgaT7yn0oT0QoIzYH4U/view?usp=sharing' target='_blank' className='btn-secundario mt-2'>DESCARGAR CV</a>
 
       </span>
       

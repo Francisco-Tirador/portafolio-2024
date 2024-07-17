@@ -2,8 +2,8 @@
 :root{
   --medida-traslacion:400px;
   --1paleta-First-color: #026913;
-  --1paleta-Second-color: #1eba0a;
-  --1paleta-Tercer-color: #399a88;
+  --1paleta-Second-color: #b4cd02;
+  --1paleta-Tercer-color: #b4cd02;
   --Text-inportant-color: #66b162;
   --2paleta-Second-color: #022a69;
 }
@@ -14,10 +14,11 @@
 }
 
 .FirstText {
+  font-size: x-large;
   color: var(--1paleta-Second-color);
-  font-size: 150%;
-  font-style: oblique;
-  font-variant-caps: all-petite-caps;
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
 
 }
 
@@ -111,8 +112,8 @@
   border-radius: 20px;
   transition: 0.3s;
   background-color: var(--2paleta-Second-color);
-  background: rgb(2, 42, 105);
-  background: radial-gradient(circle, rgba(2, 42, 105, 1) 42%, rgb(53, 206, 22) 100%);
+  border: solid 1px var(--1paleta-Second-color);
+  background: radial-gradient(circle, rgba(0 0 0) 42%, rgb(180 205 2) 100%);
   animation: 2s infinite linear alternate moveGradient;
   transition: 0.5s;
   background-size: 200% 200%;
@@ -159,7 +160,7 @@
 
 .ContenForm {
   background: rgb(2, 42, 105);
-  background: radial-gradient(circle, rgba(2, 42, 105, 1) 42%, rgb(53, 206, 22) 100%);
+  background: radial-gradient(circle, rgba(0 0 0) 42%, rgb(180 205 2) 100%);
   animation: 2s infinite linear alternate moveGradient;
   transition: 0.5s;
   background-size: 200% 200%;
@@ -210,8 +211,10 @@
 }
 
 .textForm {
-  background-color: #399a88;
+  background-color: rgb(31, 31, 31);
+  border-bottom:solid 1px var(--1paleta-Second-color);
   padding: 15px;
+  color: var(--1paleta-Second-color);
   border-radius: 0px 0px 50px 50px;
 }
 

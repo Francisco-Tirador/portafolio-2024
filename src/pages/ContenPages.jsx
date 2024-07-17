@@ -83,9 +83,9 @@ export const ContenPages = () => {
 
    window.removeEventListener('resize', handleResize);
 
-  //  setBodyToast({
-  //   message:"💚 Bienvenido a mi portafolio 💚❤️‍🔥", 
-  //  })
+   setBodyToast({
+    message:" Bienvenido a mi portafolio ✌️😎",  
+   })
   }, []);
 
 
@@ -115,8 +115,8 @@ export const ContenPages = () => {
   <ToastContainer />
     <div ref={containerRef} className='bg-red-40s0 Rotador w-[90%] mx-auto mt-auto md:mt-0 md:w-[70%] h-[90%] relative flex justify-center items-center '>
       <div className='absolute top-0 right-0 z-20 sm:mx-3 my-6 w-[100%] sm:w-auto bg-resd-100 flex sm:block justify-between items-center ml'>
-      <MdArrowBackIosNew onClick={RotacionResta} className='cursor-pointer my-1 bg-blue-950 w-[40px] h-[30px] hover:bg-secondary duration-200  p-1 rounded-sm' />
-      <MdArrowForwardIos onClick={RotacionSuma} className='cursor-pointer my-2 bg-blue-950 w-[40px] h-[30px] hover:bg-secondary duration-200  p-1 rounded-sm' />
+      <MdArrowBackIosNew onClick={RotacionResta} className='cursor-pointer my-1 bg-secondary w-[40px] h-[30px] text-black hover:bg-black hover:text-secondary duration-200  p-1 rounded-sm' />
+      <MdArrowForwardIos onClick={RotacionSuma} className='cursor-pointer my-2 bg-secondary w-[40px] h-[30px] text-black hover:bg-black hover:text-secondary duration-200  p-1 rounded-sm' />
       
       </div>
 
@@ -125,7 +125,7 @@ export const ContenPages = () => {
         <div className='absolute bottom-0 bg-red-60s0   w-full flex justify-center items-center'>
           {
             arrayComponet.map(p=>(
-                SliderPrincipal==p.id?<IoMdRadioButtonOn color='#1eba0a' className='w-6 h-6'/>:<IoRadioButtonOff/>
+                SliderPrincipal==p.id?<IoMdRadioButtonOn color='rgb(180 205 2)' className='w-6 h-6'/>:<IoRadioButtonOff/>
             ))
           }
         </div>
