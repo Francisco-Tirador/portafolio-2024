@@ -13,30 +13,41 @@ import php from '../assets/icon/php.png'
 import ps from '../assets/icon/ps.png'
 import react from '../assets/icon/react.png'
 import ts from '../assets/icon/ts.png'
+import figma from '../assets/icon/logoFigma.png'
+import express from '../assets/icon/expressLogo.png'
+import mssql from '../assets/icon/mssqlLogo.jpeg'
+
+
 
 
 const Skills = () => {
 
 // Diseño móvil
-const mobileDesignIcons = [
-    { name: 'Ionic', src: ionic },
+const DesignIcons = [
+    { name: 'FIGMA', src: figma },
     { name: 'Adobe Illustrator', src: ai },
     { name: 'CorelDRAW', src: corel },
     { name: 'Adobe Photoshop', src: ps },
   ];
+const mobileIcons = [
+    { name: 'Ionic', src: ionic },
+  ];
   
   // Frontend
   const frontendIcons = [
-    { name: 'Angular', src: angular },
+    
     { name: 'CSS', src: css },
     { name: 'HTML', src: html },
     { name: 'JavaScript', src: js },
     { name: 'React', src: react },
+    { name: 'Angular', src: angular },
     { name: 'TypeScript', src: ts },
   ];
   
   // Backend
   const backendIcons = [
+    { name: 'Mssql', src: mssql },
+    { name: 'Expres js', src: express },
     { name: 'MySQL', src: mysql },
     { name: 'PHP', src: php },
   ];
@@ -60,21 +71,27 @@ const mobileDesignIcons = [
    }
     <h4 className='w-full SecondText'>DESARROLLO MÓVIL</h4>
     {
-    mobileDesignIcons.map(i=>(
-        <img key={i.src} src={i.src} title={i.name} className='w-[29%] m-2 rounded-lg ' />
+    mobileIcons.map(i=>(
+        <img key={i.src} src={i.src} title={i.name} className='w-[19%]  m-2 rounded-lg ' />
+    ))
+   }
+    <h4 className='w-full SecondText'>BACK-END</h4>
+    {
+    backendIcons.map(i=>(
+        <img key={i.src} src={i.src} title={i.name} className='w-[19%]  m-2 rounded-lg ' />
     ))
    }
     <h4 className='w-full SecondText'>DISEÑO</h4>
     {
-    mobileDesignIcons.map(i=>(
-        <img key={i.src} src={i.src} title={i.name} className='w-[29%] m-2 rounded-lg ' />
+    DesignIcons.map(i=>(
+        <img key={i.src} src={i.src} title={i.name} className='w-[19%] m-2 rounded-lg ' />
     ))
    }
     <h4 className='w-full SecondText'>HERRAMIENTA</h4>
- {
+      {
     
         toolsIcons.map(i=>(
-            <img key={i.src} src={i.src} title={i.name} className='w-[29%] m-2 rounded-lg ' />
+            <img key={i.src} src={i.src} title={i.name} className='w-[19%] m-2 rounded-lg ' />
         ))
        }
     
