@@ -15,9 +15,9 @@ const Header = () => {
 
 
 
-  return (
+  return ( 
 <>
-<div className='bg-blue-950 md:bg-transparent w-full h-auto md:w-[20%] md:max-w-[300px] bg-green-600s md:h-[90vh] rounded-md md:border-secondary md:border-2 z-50 flex flex-wrap justify-between ' style={{ backdropFilter:" blur(5px)"}}>
+<div className='bg-blue-950 md:bg-transparent w-full h-auto md:w-[20%] md:max-w-[300px] bg-green-600s md:h-[90vh] rounded-md md:border-secondary md:border-2 z-50 flex flex-wrap justify-between md:mx-auto ' style={{ backdropFilter:" blur(5px)"}}>
         <img src={logo} alt=" logo francico" className='h-[50px] w-[50px] md:h-auto md:w-auto lg:max-w-auto md:max-h-[200px] ml-2 md:mx-auto md:my-3 md:img-logo md:mt-5 md:rounded-xl md:shadow-2xl md:border md:border-secondary' />
 
         <span className='mx-auto hidden md:block'>
@@ -26,7 +26,7 @@ const Header = () => {
                 <p className='text-secondary font-bold m-0 '>Francisco Beltran</p>
                 <p className='m-0 '>Dessarrollador Fron-End y diseñador</p>
             </div>
-            <button className='btn-secundario'>DESCARGAR CV</button>
+            <a href='https://drive.google.com/file/d/1TX0lguraXb1gXzgaT7yn0oT0QoIzYH4U/view?usp=sharing' target='_blank' className='btn-secundario '>DESCARGAR CV</a>
         </span>
 
         <div className='hidden  bg-secondary1 w-[80%] mx-auto p-3 md:flex justify-around mt-auto mb-4 '>
@@ -51,7 +51,7 @@ const Header = () => {
          <div className='w-full '>
          <IoIosCloseCircle className={"btn-close w-[40px] h-[40px] m-auto"} onClick={()=>setPopMenu(false)}/>
          </div>
-         <button className='btn-secundario mt-3'>DESCARGAR CV</button>
+         <a href='https://drive.google.com/file/d/1TX0lguraXb1gXzgaT7yn0oT0QoIzYH4U/view?usp=sharing' target='_blank' className='btn-secundario mt-3'>DESCARGAR CV</a>
 
       </span>
       
