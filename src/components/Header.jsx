@@ -4,6 +4,7 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaSquareWhatsapp } from "react-icons/fa6";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { IoIosCloseCircle } from 'react-icons/io';
 
 
 
@@ -33,16 +34,30 @@ const Header = () => {
           <FaLinkedin className='w-[20%] h-[100%] hover:text-blue-500 cursor-pointer hover:scale-105 duration-200'/>
           <FaSquareWhatsapp className='w-[20%] h-[100%] hover:text-secondary cursor-pointer hover:scale-105 duration-200'/>
         </div>
-        <GiHamburgerMenu onClick={()=>setPopMenu(false)} className='w-[40px] h-[40px] my-auto mr-2 md:hidden'/>
+        <GiHamburgerMenu onClick={()=>setPopMenu(true)} className='w-[40px] h-[40px] my-auto mr-2 md:hidden'/>
 
         
     </div>
-   <div className=' absolute z-50 h-full w-full flex' style={{backgroundColor:"#0000007d"}}>
-        <div className='bg-gray-800 w-[350px] h-[350px]  m-auto top-0 right-0 left-0 bottom-0 rounded-full '>
-            hola
+  {
+    popMenu&&
+<div className=' absolute z-50 h-full w-full flex' style={{backgroundColor:"#0000007d"}}>
+     <div className='bg-gray-800 w-[350px] h-[350px]  m-auto top-0 right-0 left-0 bottom-0 rounded-full flex '>
+      <span className='m-auto'>
+          <div className='w-full flex justify-center mb-3'> 
+           <FaGithub className='w-[40px] h-[40px] hover:text-purple-600 cursor-pointer hover:scale-105 duration-200 mx-2'/>
+          <FaLinkedin className='w-[40px] h-[40px] hover:text-blue-500 cursor-pointer hover:scale-105 duration-200 mx-2'/>
+          <FaSquareWhatsapp className='w-[40px] h-[40px] hover:text-secondary cursor-pointer hover:scale-105 duration-200 mx-2'/>
+       </div>
+         <div className='w-full '>
+         <IoIosCloseCircle className={"btn-close w-[40px] h-[40px] m-auto"} onClick={()=>setPopMenu(false)}/>
+         </div>
+         <button className='btn-secundario mt-3'>DESCARGAR CV</button>
 
-          </div>
-   </div>
+      </span>
+      
+      </div>
+</div>
+  }
 </>
   )
 }
