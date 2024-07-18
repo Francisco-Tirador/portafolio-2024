@@ -17,7 +17,7 @@ const Presentation = () => {
         Saludos !!!
         </p>
     
-        <a href='https://drive.google.com/file/d/1TX0lguraXb1gXzgaT7yn0oT0QoIzYH4U/view?usp=sharing' target='_blank' >
+        <a href='https://drive.google.com/file/d/1nl-sFX3R-2klFylSx3JOaVuXFo4Vnz8o/view?usp=sharing' target='_blank' >
           <button className='btn-secundario  '>
           DESCARGAR CURRÍCULUM
           </button>

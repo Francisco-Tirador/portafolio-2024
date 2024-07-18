@@ -26,7 +26,7 @@ const Header = () => {
                 <p className='text-secondary font-bold m-0 FirstText '>Francisco Beltran</p>
                 <p className='m-0 '>Dessarrollador Fron-End y diseñador</p>
             </div>
-            <a href='https://drive.google.com/file/d/1TX0lguraXb1gXzgaT7yn0oT0QoIzYH4U/view?usp=sharing' target='_blank' className='btn-secundario '>DESCARGAR CV</a>
+            <a href='https://drive.google.com/file/d/1nl-sFX3R-2klFylSx3JOaVuXFo4Vnz8o/view?usp=sharing' target='_blank' className='btn-secundario '>DESCARGAR CV</a>
         </span>
 
         <div className='hidden  bg-secondary1 w-[80%] mx-auto p-3 md:flex justify-around mt-auto mb-4 '>
@@ -64,7 +64,7 @@ const Header = () => {
          <div className='w-full my-6'>
          <IoIosCloseCircle className={"btn-close w-[40px] h-[40px] m-auto"} onClick={()=>setPopMenu(false)}/>
          </div>
-         <a href='https://drive.google.com/file/d/1TX0lguraXb1gXzgaT7yn0oT0QoIzYH4U/view?usp=sharing' target='_blank' className='btn-secundario mt-2'>DESCARGAR CV</a>
+         <a href='https://drive.google.com/file/d/1nl-sFX3R-2klFylSx3JOaVuXFo4Vnz8o/view?usp=sharing' target='_blank' className='btn-secundario mt-2'>DESCARGAR CV</a>
 
       </span>
       
