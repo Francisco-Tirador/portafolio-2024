@@ -42,13 +42,13 @@ const Galeria = ({btnClose,slideOpen,setPicture}) => {
   };
 
   const arraySliders=[
-    {id:4, conten:[moduloGeocoding,moduloRH],descripcion:"En estos modulos se crearón para satisfacer las necesidades de la empresa como la administracion del personal y la ubicacion exacta de direcciones utilizando una api de geolocalizaciones  "},
+    {id:4, conten:[moduloGeocoding,moduloRH],descripcion:"En estos módulos se crearon para satisfacer las necesidades de la empresa, como la administración del personal y la ubicación exacta de direcciones utilizando una API de geolocalizaciones.  "},
 
-    {id:5, conten:[loginEmbajadoras,embajadorasConvocatorias,registro],descripcion:"Se creo una pagina, administrable con sus propias convocatorias, donde todo su contenido se podia borrar, editar y agregar nuevas "},
+    {id:5, conten:[loginEmbajadoras,embajadorasConvocatorias,registro],descripcion:"Se creó una página, administrable, con sus propias convocatorias, donde todo su contenido se puede borrar, editar y agregar nuevos. "},
    
     {id:1, conten:[pay,pay2,status],descripcion:"He podido integrar pasarelas de pago tanto de mercado libre, Open pay (BBVA) y Red Pay  algunas han sido integradas en php y js , partiendo de un diseño original y propio, simple  y agradable a la vista  "},
-    {id:2,conten:[log1,log2,log3,loginEmbajadoras,comp],descripcion:"He crado diferentes Loggins con diseños muy originales, basados en react, html y php; siempre mantenido un diseño original y amigable; además de integrar algunos componentes para aumentar las funcionalidades o el mantenimiento del sitio"},
-    {id:3,conten:[sist,sist2,log3],descripcion:"Tambien e trabajado en proyectos de sitemas de registros y afiliaciones que se adaptan a las necesidades del cliente; siempre  colaborando de la mano con este para dar los mejores resultados  "},
+    {id:2,conten:[log1,log2,log3,loginEmbajadoras,comp],descripcion:"He creado diferentes Loggins con diseños muy originales, basados en react, html y php; siempre mantenido un diseño original y amigable; además de integrar algunos componentes para aumentar las funcionalidades o el mantenimiento del sitio."},
+    {id:3,conten:[sist,sist2,log3],descripcion:"También he trabajado en proyectos de sistemas de registros y afiliaciones que se adaptan a las necesidades del cliente, siempre colaborando de la mano con este para dar los mejores resultados.  "},
    
    
   ]
