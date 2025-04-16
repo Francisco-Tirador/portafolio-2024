@@ -12,7 +12,7 @@ import { MdArrowBackIosNew } from "react-icons/md";
 import { Bounce, toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import flecha from "../assets/images/flecha.png";
+import flecha from "../assets/images/flecha2025.png";
 import { useForm } from "react-hook-form";
 
 export const ContenPages = () => {
@@ -76,18 +76,18 @@ export const ContenPages = () => {
       }
       setRecordatorio(false);
       setBodyToast({
-        message: " Bienvenido a mi portafolio ✌️😎",
-     });
+         message: " Bienvenido a mi portafolio ✌️😎",
+      });
    };
 
    useEffect(() => {
       const recordatorioStorage = localStorage.getItem("recordarTip");
       if (recordatorioStorage != "false") {
          setRecordatorio(true);
-      }else{
-        setBodyToast({
-          message: " Bienvenido a mi portafolio ✌️😎",
-       });
+      } else {
+         setBodyToast({
+            message: " Bienvenido a mi portafolio ✌️😎",
+         });
       }
 
       const handleResize = () => {
@@ -103,7 +103,7 @@ export const ContenPages = () => {
       window.removeEventListener("resize", handleResize);
    }, []);
 
- 
+
 
    const memoPagesActive = useMemo(() => {
       return arrayComponet.map((componente) => (
@@ -118,17 +118,25 @@ export const ContenPages = () => {
    }, [SliderPrincipal]);
 
 
-   
+
    return (
       <>
-         <div className={` absolute w-full h-full bg-[#0000007d] z-[60] ${!recordatorio && "hidden"}`}>
-            <div className="absolute right-0 mr-[18%] md:mr-[10%] mt-[20px]">
-               <img src={flecha} className="ml-auto w-[25%]" alt="" />
+        
+         <ToastContainer />
+
+         <div ref={containerRef} className="bg-red-40s0 Rotador w-[90%] mx-auto mt-auto md:mt-0 md:w-[70%] h-[90%] relative flex justify-center items-center max-w-[1400px] ">
+            <div className="absolute top-0 right-0 z-[60] sm:mx-3 my-6 w-[100%] sm:w-auto bg-resd-100 flex sm:block justify-between items-center ml">
+               <MdArrowBackIosNew onClick={RotacionResta} className="cursor-pointer my-1 bg-secondary w-[40px] h-[30px] text-gray-50 hover:bg-black hover:text-secondary duration-200  p-1 rounded-sm" />
+               <MdArrowForwardIos onClick={RotacionSuma} className="cursor-pointer  my-2 bg-secondary w-[40px] h-[30px] text-gray-50 hover:bg-black hover:text-secondary duration-200  p-1 rounded-sm" />
+           
+         <div className={` fixed right-0 top-0 w-full h-full bg-[#0000007d] z-[40] ${!recordatorio && "hidden"}`}>
+            <div className="absolute right-0 mr-[18%] md:mr-[10%] mt-[20px] 2xl:mr-[20%] 2xl:mt-[50px]">
+               <img src={flecha} className="ml-auto w-[25%] rotate-180" alt="" />
                <div className="bg-white text-black ml-auto w-[80%] md:w-[60%] pt-3 rounded-md">
                   <p className="mx-1">Recuerda que puedes cambiar de pestaña con estos botones 😊👍</p>
-                  <form onSubmit={handleSubmit(recordatoriAceptado)} className="bg-secondary py-1 flex justify-around items-center">
+                  <form onSubmit={handleSubmit(recordatoriAceptado)} className="bg-secondary  py-1 flex justify-around items-center">
                      <span>
-                        <label htmlFor="jamas" className="text-black">
+                        <label htmlFor="jamas" className="text-gray-50">
                            Ya no recordar
                         </label>
                         <input type="checkbox" className="ml-2" {...register("noRecordar")} />
@@ -138,17 +146,20 @@ export const ContenPages = () => {
                </div>
             </div>
          </div>
-         <ToastContainer />
-
-         <div ref={containerRef} className="bg-red-40s0 Rotador w-[90%] mx-auto mt-auto md:mt-0 md:w-[70%] h-[90%] relative flex justify-center items-center ">
-            <div className="absolute top-0 right-0 z-[60] sm:mx-3 my-6 w-[100%] sm:w-auto bg-resd-100 flex sm:block justify-between items-center ml">
-               <MdArrowBackIosNew onClick={RotacionResta} className="cursor-pointer my-1 bg-secondary w-[40px] h-[30px] text-black hover:bg-black hover:text-secondary duration-200  p-1 rounded-sm" />
-               <MdArrowForwardIos onClick={RotacionSuma} className="cursor-pointer my-2 bg-secondary w-[40px] h-[30px] text-black hover:bg-black hover:text-secondary duration-200  p-1 rounded-sm" />
+           
             </div>
+
 
             {memoPagesActive}
 
-            <div className="absolute bottom-0 bg-red-60s0   w-full flex justify-center items-center">{arrayComponet.map((p) => (SliderPrincipal == p.id ? <IoMdRadioButtonOn color="rgb(180 205 2)" className="w-6 h-6" /> : <IoRadioButtonOff />))}</div>
+            <div className="absolute bottom-0    w-full flex justify-center items-center">
+               {
+               arrayComponet.map((p) => 
+                  (SliderPrincipal == p.id ? 
+                     <IoMdRadioButtonOn key={p.id}  className="w-6 h-6 text-secondary" /> : 
+                  <IoRadioButtonOff key={p.id} />))
+               }
+            </div>
          </div>
       </>
    );

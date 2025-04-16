@@ -8,12 +8,14 @@ function App() {
 
 
   return (
-    <div className='bg-gray-800 h-full w-full md:flex  justify-around items-center overflow-hidden bg-center bg-no-repeat bg-cover'
+    <div className='bg-gray-800 h-full w-full  bg-center bg-no-repeat bg-cover flex md:overflow-hidden '
       style={{backgroundImage:`url(https://images.wallpaperscraft.com/image/single/dark_spots_texture_50355_2558x1562.jpg)`}}
     >
-      
-      <Header/>
-      <ContenPages />
+
+     <div className=' w-full h-full md:flex  justify-around items-center overflow-hiddens  max-w-[1400px] m-auto  max-h-[1000px]'>
+        <Header/>
+        <ContenPages />
+     </div>
 
     </div>
   )

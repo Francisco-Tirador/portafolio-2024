@@ -52,7 +52,7 @@ const Projects = () => {
         }
       <div className=' overflow-hidden clear relative'>
      
-        <h2 className='apt FirstText'>Proyectos</h2>
+        <h2 className='apt FirstText text-third'>Proyectos</h2>
   
   
         <Galeria btnClose={toggleGallery} slideOpen={gallery} setPicture={setItem} />
@@ -60,13 +60,13 @@ const Projects = () => {
   
           {
             ArrayProyects.map(P => (
-              <div key={P.id} className='rounded-md bg-gray-200 p-5 mx-3 my-2 sm:flex duration-300 hover:bg-secondary group '>
+              <div key={P.id} className='rounded-md bg-gray-200 p-5 mx-3 my-2 sm:flex duration-300 hover:bg-third group '>
                 <div className='w-[40%] min-w-[250px] h-[250px] rounded-[20px] relative mx-auto '>
                   <img className='fondoProyect rounded-md duration-500' src={P.imagenFondo} alt="" />
                   <img className='group-hover:top-[-40px] max-w-[80%] absolute right-0 left-0 top-[120px] m-auto duration-500' src={P?.logo} alt="" />
                   <img className='group-hover:bottom-[50px] group-hover:opacity-100 h-[200px] absolute m-auto right-0 left-0 bottom-0 opacity-0  duration-500' src={P?.personaje} alt="" />
                 </div>
-                <div className='flex justify-center items-center bg-white text-black px-5 py-3 m-3 box-border flex-wrap'>
+                <div className='flex justify-center items-center bg-white rounded-md text-black px-5 py-3 m-3 box-border flex-wrap'>
                   <b>{P.titulo} - {P.year} </b>
                   
                     {

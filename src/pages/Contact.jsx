@@ -48,25 +48,26 @@ const Contact = ({ alert }) => {
    return (
       <>
          <div className="flex flex-wrap justify-center items-center mx-auto">
-            <h2 className="apt FirstText">Contacto</h2>
-            <div className="ContenForm mt-5 w-[100%] ">
-               <h3 className="textPrincipal textForm">¡Hablemos sobre de tu idea!</h3>
-               <form onSubmit={handleSubmit(submitMessage)} id="formContacto">
-                  <label htmlFor="">Nombre</label>
+            <h2 className="apt FirstText text-third">Contacto</h2>
+            <div className="ContenForm inline-block bg-gray-300 mt-5 w-[100%] rounded-md ">
+            <h3 className="text-start ml-12  text-third my-3 text-xl font-medium">¡Hablemos sobre de tu idea!</h3>
+
+               <form onSubmit={handleSubmit(submitMessage)} id="formContacto" >
+                  <label htmlFor="" className="text-secondary text-md text-start font-bold ml-[11%] ">Nombre</label>
 
                   <span className="relative">
-                     <FaUserCircle className="absolute bottom-[2px] left-[20px] text-important" />
+                     <FaUserCircle className="absolute bottom-[2px] left-[20px] text-secondary" />
                      <input type="text" placeholder="Nombre" required className="text-black" {...register("nombre")} />
                   </span>
-                  <label htmlFor="">Correo</label>
-                  <span className="relative">
-                     <MdEmail className="absolute bottom-[2px] left-[20px] text-important" />
+                  <label className="text-secondary text-md text-start font-bold ml-[11%] ">Correo</label>
+                  <span className="relative ">
+                     <MdEmail className="absolute bottom-[2px] left-[20px] text-secondary" />
                      <input type="email" placeholder="example@example.com" required className="text-black" {...register("email")} />
                   </span>
 
-                  <textarea {...register("message")} name="message" className="text-black" cols="30" rows="10" placeholder="Escribe tu mensaje" required></textarea>
+                  <textarea {...register("message")} name="message" className="text-black bg-gray-50" cols="30" rows="10" placeholder="Escribe tu mensaje" required></textarea>
                </form>
-               <button className="btn " form="formContacto">
+               <button className="bg-secondary px-12 py-2 rounded-md mr-auto" form="formContacto">
                   {!stateBtn ? (
                      "Enviar"
                   ) : stateBtn == 1 ? (

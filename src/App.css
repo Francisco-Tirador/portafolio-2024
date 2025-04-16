@@ -14,16 +14,15 @@
 }
 
 .FirstText {
-  font-size: x-large;
-  color: var(--1paleta-Second-color);
-  font-family: "Permanent Marker", cursive;
-  font-weight: 400;
+  font-size: 2rem; /* Más control que x-large */
+  font-family: 'Fredoka', sans-serif; /* Moderna, redondeada y amigable */
+  font-weight: 600; /* Título marcado pero no pesado */
   font-style: normal;
-
+  letter-spacing: 0.5px; /* Suave separación entre letras 👌 */
 }
 
 .SecondText {
-  color: var(--1paleta-Tercer-color);
+  /* color: var(--1paleta-Tercer-color); */
   font-size: 150%;
   font-style: oblique;
   font-variant-caps: all-petite-caps;
@@ -112,17 +111,17 @@
   border-radius: 20px;
   transition: 0.3s;
   background-color: var(--2paleta-Second-color);
-  border: solid 1px var(--1paleta-Second-color);
-  background: radial-gradient(circle, rgba(0 0 0) 42%, rgb(180 205 2) 100%);
+  border: solid 1px #0645ce;
+  background: radial-gradient(circle, rgb(104, 118, 226) 1%, rgb(38, 47, 184) 50%);
   animation: 2s infinite linear alternate moveGradient;
   transition: 0.5s;
-  background-size: 200% 200%;
+  background-size: 200% 300%;
 }
 
 .btn-secundario:hover {
   scale: 1.09;
   transform: translateY(-10px);
-  box-shadow: 5px 5px 0px var(--1paleta-Second-color);
+  box-shadow: 5px 5px 0px #6393fc;
 }
 
 @keyframes moveGradient {
@@ -159,12 +158,9 @@
 
 
 .ContenForm {
-  background: rgb(2, 42, 105);
-  background: radial-gradient(circle, rgba(0 0 0) 42%, rgb(180 205 2) 100%);
-  animation: 2s infinite linear alternate moveGradient;
-  transition: 0.5s;
-  background-size: 200% 200%;
-  padding-bottom: 10px;
+  /* background: radial-gradient(circle, rgba(0 0 0) 42%, rgb(180 205 2) 100%); */
+  /* animation: 2s infinite linear alternate moveGradient; */
+  padding: 10px;
 }
 
 @keyframes moveGradient {
@@ -196,7 +192,8 @@
 .ContenForm textarea {
   width: 80%;
   border-radius: 5px;
-  border: 2px rgba(0, 0, 0, 0.726) dashed;
+  margin-top: 10px;
+  padding: 5px 15px 5px 50px;
   min-height: 50px;
   max-height: 150px;
   min-width: 80%;
@@ -205,9 +202,9 @@
 }
 
 .ContenForm label {
-  width: 10%;
+  /* width: 10%; */
   display: block;
-  margin-left: 20%;
+  /* margin-left: 20%; */
 }
 
 .textForm {

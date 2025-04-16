@@ -62,38 +62,47 @@ const mobileIcons = [
 
   return (
     <div className='flex flex-wrap justify-center items-center '>
-    <h2 className='apt FirstText w-full'>Habilidades</h2>
+    <h2 className='apt FirstText w-full text-third'>Habilidades</h2>
     <h4 className='apt SecondText w-full'>FRONT-END</h4>
-   {
-    frontendIcons.map(i=>(
-        <img key={i.src} src={i.src} title={i.name} className='w-[19%]  m-2 rounded-lg ' />
-    ))
-   }
+    <div className='flex flex-wrap justify-center items-center my-6'>
+        {
+        frontendIcons.map(i=>(
+            <img key={i.src} src={i.src} title={i.name} className='w-[100px]  m-2 rounded-lg ' />
+        ))
+      }
+    </div>
     <h4 className='w-full SecondText'>DESARROLLO MÓVIL</h4>
+    <div className='flex flex-wrap justify-center items-center my-6'>
     {
     mobileIcons.map(i=>(
-        <img key={i.src} src={i.src} title={i.name} className='w-[19%]  m-2 rounded-lg ' />
+        <img key={i.src} src={i.src} title={i.name} className='w-[100px]  m-2 rounded-lg ' />
     ))
    }
+    </div>
     <h4 className='w-full SecondText'>BACK-END</h4>
+    <div className='flex flex-wrap justify-center items-center my-6'>
     {
     backendIcons.map(i=>(
-        <img key={i.src} src={i.src} title={i.name} className='w-[19%]  m-2 rounded-lg ' />
+        <img key={i.src} src={i.src} title={i.name} className='w-[100px]  m-2 rounded-lg ' />
     ))
    }
+    </div>
     <h4 className='w-full SecondText'>DISEÑO</h4>
+    <div className='flex flex-wrap justify-center items-center my-6'>
     {
     DesignIcons.map(i=>(
-        <img key={i.src} src={i.src} title={i.name} className='w-[19%] m-2 rounded-lg ' />
+        <img key={i.src} src={i.src} title={i.name} className='w-[100px]  m-2 rounded-lg ' />
     ))
    }
+    </div>
     <h4 className='w-full SecondText'>HERRAMIENTA</h4>
-      {
-    
-        toolsIcons.map(i=>(
-            <img key={i.src} src={i.src} title={i.name} className='w-[19%] m-2 rounded-lg ' />
-        ))
-       }
+    <div className='flex flex-wrap justify-center items-center my-6'>
+    {
+    toolsIcons.map(i=>(
+        <img key={i.src} src={i.src} title={i.name} className='w-[100px]  m-2 rounded-lg ' />
+    ))
+   }
+    </div>
     
 
 </div>

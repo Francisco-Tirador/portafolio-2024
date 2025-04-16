@@ -31,7 +31,7 @@
   font-style: normal;
 }
 
-.honk {
+/* .honk {
   font-family: "Honk", system-ui;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -41,17 +41,17 @@
     "SHLN" 20;
     color: #b4cd02;
 
-}
+} */
 
-::-moz-selection {
+/* ::-moz-selection {
   color: #ffffff;
   background: #b4cd02;
-}
+} */
 
-::selection {
+/* ::selection {
   color: #ffffff;
   background: #b4cd02;
-}
+} */
 
 
 /* Estilo del scrollbar */
@@ -61,7 +61,7 @@
 
 /* Estilo del thumb (el "mango" del scrollbar) */
 ::-webkit-scrollbar-thumb {
-  background-color: #b4cd02; /* Color de fondo del thumb */
+  background-color: #2f70e7; /* Color de fondo del thumb */
   border-radius: 6px; /* Bordes redondeados */
 }
 
