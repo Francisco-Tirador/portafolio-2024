@@ -1,5 +1,6 @@
 import React from 'react'
-import Yo from '../assets/images/yo2025.jpeg'
+import Yo from '../assets/images/yo2025.png'
+import pdf from '../assets/FranciscoB.pdf'
 
 const Presentation = () => {
   return (
@@ -19,7 +20,7 @@ const Presentation = () => {
          Saludos !!!
         </p>
     
-        <a href='https://drive.google.com/file/d/1FdJ05Udk1AYPAEVmwzHt5wT5h-U1bqYk/view?usp=drivesdk' target='_blank' >
+        <a href={pdf} download={"FRANCISCO_BELTRAN_CV.pdf"}  >
           <button className='btn-secundario  '>
           DESCARGAR CURRÍCULUM
           </button>

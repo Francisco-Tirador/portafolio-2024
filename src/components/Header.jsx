@@ -5,7 +5,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaSquareWhatsapp } from "react-icons/fa6";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosCloseCircle } from 'react-icons/io';
-
+import pdf from '../assets/FranciscoB.pdf'
 
 
 
@@ -26,7 +26,7 @@ const Header = () => {
             <p className='text-third m-0 FirstText xl:text-[20px] 2xl:text-[28px]'>Francisco Beltran</p>
             <p className='m-0 '>Dessarrollador Fron-End y diseñador</p>
           </div>
-          <a href='https://drive.google.com/file/d/1Gn6OiyTS7sY_EFG3sAN27ea174gzhfB5/view' target='_blank' className='btn-secundario '>DESCARGAR CV</a>
+            <a href={pdf} download={"FRANCISCO_BELTRAN_CV.pdf"}  className='btn-secundario '>DESCARGAR CV</a>
         </span>
 
         <div className='hidden  bg-secondary1 w-[80%] mx-auto p-3 md:flex justify-around mt-auto mb-4 '>
@@ -65,7 +65,7 @@ const Header = () => {
               <div className='w-full my-6'>
                 <IoIosCloseCircle className={"btn-close w-[40px] h-[40px] m-auto"} onClick={() => setPopMenu(false)} />
               </div>
-              <a href='https://drive.google.com/file/d/1Gn6OiyTS7sY_EFG3sAN27ea174gzhfB5/view' target='_blank' className='btn-secundario mt-2'>DESCARGAR CV</a>
+              <a href={pdf} download={"FRANCISCO_BELTRAN_CV.pdf"} className='btn-secundario mt-2'>DESCARGAR CV</a>
 
             </span>
 
