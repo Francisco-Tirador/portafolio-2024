@@ -6,6 +6,7 @@ import { FaSquareWhatsapp } from "react-icons/fa6";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosCloseCircle } from 'react-icons/io';
 import pdf from '../assets/FranciscoB.pdf'
+import { urlCuriiculum } from '../App';
 
 
 
@@ -26,7 +27,7 @@ const Header = () => {
             <p className='text-third m-0 FirstText xl:text-[20px] 2xl:text-[28px]'>Francisco Beltran</p>
             <p className='m-0 '>Dessarrollador Fron-End y diseñador</p>
           </div>
-            <a href={pdf} download={"FRANCISCO_BELTRAN_CV.pdf"}  className='btn-secundario '>DESCARGAR CV</a>
+            <a href={urlCuriiculum} target='_blank' className='btn-secundario '>DESCARGAR CV</a>
         </span>
 
         <div className='hidden  bg-secondary1 w-[80%] mx-auto p-3 md:flex justify-around mt-auto mb-4 '>
@@ -65,7 +66,7 @@ const Header = () => {
               <div className='w-full my-6'>
                 <IoIosCloseCircle className={"h-10 bg-gray-500 text-red-400  rounded-md p-1 w-10 m-auto"} onClick={() => setPopMenu(false)} />
               </div>
-              <a href={pdf} download={"FRANCISCO_BELTRAN_CV.pdf"} className='btn-secundario mt-2'>DESCARGAR CV</a>
+              <a href={urlCuriiculum} target='_blank' className='btn-secundario mt-2'>DESCARGAR CV</a>
 
             </span>
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import Yo from '../assets/images/yo2025.png'
 import pdf from '../assets/FranciscoB.pdf'
+import { urlCuriiculum } from '../App'
 
 const Presentation = () => {
   return (
@@ -20,7 +21,7 @@ const Presentation = () => {
          Saludos !!!
         </p>
     
-        <a href={pdf} download={"FRANCISCO_BELTRAN_CV.pdf"}  >
+        <a href={urlCuriiculum} target='_blank' >
           <button className='btn-secundario  '>
           DESCARGAR CURRÍCULUM
           </button>
