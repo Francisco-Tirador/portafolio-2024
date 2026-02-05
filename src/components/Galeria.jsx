@@ -88,8 +88,10 @@ const Galeria = ({ btnClose, slideOpen, setPicture }) => {
                 <Slider  {...settings} className='slider mb-6'>
                   {
                     S.conten.map((C, index) => (
-                      <div key={index} >
-                        <img src={C} onClick={(e) => openPicture(C)} alt="imagen1" />
+                      <div key={index}  onClick={(e) => openPicture(C)} className='flex justify-center items-center border bg-gray-50 mx-auto'>
+                        <div className='mx-auto w-fit'>
+                          <img className='max-w-fit ml-32 ' src={C}  alt="imagen1" />
+                        </div>
                       </div>
                     ))
                   }
