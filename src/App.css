@@ -6,6 +6,7 @@
   --1paleta-Tercer-color: #b4cd02;
   --Text-inportant-color: #66b162;
   --2paleta-Second-color: #022a69;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #root {
@@ -14,18 +15,19 @@
 }
 
 .FirstText {
-  font-size: 2rem; /* Más control que x-large */
-  font-family: 'Fredoka', sans-serif; /* Moderna, redondeada y amigable */
-  font-weight: 600; /* Título marcado pero no pesado */
+  font-size: 2rem;
+  /* font-family: 'Fredoka', sans-serif; */
+  font-weight: 600;
+  font-weight: 600;
   font-style: normal;
-  letter-spacing: 0.5px; /* Suave separación entre letras 👌 */
+  letter-spacing: 0.5px
 }
 
 .SecondText {
   /* color: var(--1paleta-Tercer-color); */
-  font-size: 150%;
+  /* font-size: 150%;
   font-style: oblique;
-  font-variant-caps: all-petite-caps;
+  font-variant-caps: all-petite-caps; */
 }
 
 

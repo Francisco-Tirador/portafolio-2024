@@ -47,8 +47,8 @@ const Header = () => {
       </div>
       {
         popMenu &&
-        <div className=' absolute z-50 h-full w-full flex' style={{ backgroundColor: "#0000007d" }}>
-          <div className='bg-gray-800 w-[350px] h-[350px]  m-auto top-0 right-0 left-0 bottom-0 rounded-full flex '>
+        <div className=' absolute z-[100] h-full w-full flex bg-[#0000006e] backdrop-blur-sm ' >
+          <div className='bg-gray-800 filter backdrop-blur-md w-[350px] h-[350px]  m-auto top-0 right-0 left-0 bottom-0 rounded-full flex '>
             <span className='m-auto'>
               <div className='w-full flex justify-center mb-3'>
                 <a href="https://github.com/Francisco-Tirador" target='_blank'>
@@ -58,12 +58,12 @@ const Header = () => {
                   <FaLinkedin className='w-[40px] h-[40px] hover:text-blue-500 cursor-pointer hover:scale-105 duration-200 mx-2' />
                 </a>
 
-                <a href="https://api.whatsapp.com/send/?phone=5215620397081&text=Hola%20me%20gustaria%20trabajar%20con%20tigo&type=phone_number&app_absent=0" target='_blank'>
+                <a href="https://api.whatsapp.com/send/?phone=5215620397081&text=Hola%20me%20gustaria%20trabajar%20contigo&type=phone_number&app_absent=0" target='_blank'>
                   <FaSquareWhatsapp className='w-[40px] h-[40px] hover:text-green-600 cursor-pointer hover:scale-105 duration-200 mx-2' />
                 </a>
               </div>
               <div className='w-full my-6'>
-                <IoIosCloseCircle className={"btn-close w-[40px] h-[40px] m-auto"} onClick={() => setPopMenu(false)} />
+                <IoIosCloseCircle className={"h-10 bg-gray-500 text-red-400  rounded-md p-1 w-10 m-auto"} onClick={() => setPopMenu(false)} />
               </div>
               <a href={pdf} download={"FRANCISCO_BELTRAN_CV.pdf"} className='btn-secundario mt-2'>DESCARGAR CV</a>
 
