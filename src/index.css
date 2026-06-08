@@ -9,9 +9,9 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: #0d1117;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -61,14 +61,13 @@
 
 /* Estilo del thumb (el "mango" del scrollbar) */
 ::-webkit-scrollbar-thumb {
-  background-color: #2f70e7; /* Color de fondo del thumb */
-  border-radius: 6px; /* Bordes redondeados */
+  background-color: #22c55e;
+  border-radius: 6px;
 }
 
-/* Estilo del track (el "rastro" del scrollbar) */
 ::-webkit-scrollbar-track {
-  background-color: #313131;
-  border-radius:6px; /* Color de fondo del track */
+  background-color: #161b22;
+  border-radius: 6px;
 }
 
 p{

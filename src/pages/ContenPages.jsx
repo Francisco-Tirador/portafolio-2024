@@ -4,27 +4,19 @@ import Skills from "./Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
 
-import { IoRadioButtonOff } from "react-icons/io5";
-import { IoMdRadioButtonOn } from "react-icons/io";
-import { MdArrowForwardIos } from "react-icons/md";
-import { MdArrowBackIosNew } from "react-icons/md";
 
 import { Bounce, toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import flecha from "../assets/images/flecha2025.png";
-import { useForm } from "react-hook-form";
 
 export const ContenPages = () => {
    const [SliderPrincipal, setSliderPrincipal] = useState(1);
    const [Antes, setAntes] = useState(4);
-   const [recordatorio, setRecordatorio] = useState(false);
    const [Lado, setLado] = useState(0);
    const [bodyToast, setBodyToast] = useState({});
    const containerRef = useRef(null);
 
-   const { handleSubmit, register } = useForm();
-
+  
    useEffect(() => {
       if (bodyToast.message) {
          (bodyToast?.type ? toast[bodyToast?.type] : toast)(bodyToast.message, {
@@ -48,47 +40,8 @@ export const ContenPages = () => {
       { componente: <Contact alert={setBodyToast} />, id: 4 },
    ];
 
-   const RotacionSuma = () => {
-      setLado(1);
-      if (SliderPrincipal === 4) {
-         setAntes(SliderPrincipal);
-         setSliderPrincipal(1);
-      } else {
-         setAntes(SliderPrincipal);
-         setSliderPrincipal(SliderPrincipal + 1);
-      }
-   };
-
-   const RotacionResta = () => {
-      setLado(0);
-      if (SliderPrincipal === 1) {
-         setAntes(SliderPrincipal);
-         setSliderPrincipal(4);
-      } else {
-         setAntes(SliderPrincipal);
-         setSliderPrincipal(SliderPrincipal - 1);
-      }
-   };
-
-   const recordatoriAceptado = (data) => {
-      if (data.noRecordar) {
-         localStorage.setItem("recordarTip", false);
-      }
-      setRecordatorio(false);
-      setBodyToast({
-         message: " Bienvenido a mi portafolio ✌️😎",
-      });
-   };
-
+  
    useEffect(() => {
-      const recordatorioStorage = localStorage.getItem("recordarTip");
-      if (recordatorioStorage != "false") {
-         setRecordatorio(true);
-      } else {
-         setBodyToast({
-            message: " Bienvenido a mi portafolio ✌️😎",
-         });
-      }
 
       const handleResize = () => {
          if (containerRef.current) {
@@ -109,7 +62,7 @@ export const ContenPages = () => {
       return arrayComponet.map((componente) => (
          <div
             key={componente.id}
-            className={`py-3 md:px-[30px] lg:py-[20px]  rounded-[20px] Resto  page overflow-y-auto flex 
+            className={`pt-2 pb-4 Resto page overflow-hidden flex
             ${SliderPrincipal === componente.id && Lado === 0 ? " RotaX" : SliderPrincipal === componente.id && Lado === 1 ? " RotaY" : Antes === componente.id && Lado === 0 ? "Rota" : Antes === componente.id && Lado === 1 ? " Rota RotacionRegreso" : "hidden "}`}
          >
             {componente.componente}
@@ -119,46 +72,73 @@ export const ContenPages = () => {
 
 
 
+   const tabLabels = ['Sobre mi', 'Habilidades', 'Proyectos', 'Contacto'];
+   const activeIdx = SliderPrincipal - 1;
+
+   const navigate = (id) => { setLado(id > SliderPrincipal ? 1 : 0); setAntes(SliderPrincipal); setSliderPrincipal(id); };
+
    return (
       <>
-        
          <ToastContainer />
 
-         <div ref={containerRef} className="bg-red-40s0 Rotador w-[90%] mx-auto mt-auto md:mt-0 md:w-[70%] h-[90%] relative flex justify-center items-center max-w-[1400px] ">
-            <div className="absolute top-0 right-0 z-[60] sm:mx-3 my-6 w-[100%] sm:w-auto bg-resd-100 flex sm:block justify-between items-center ml">
-               <MdArrowBackIosNew onClick={RotacionResta} className="cursor-pointer my-1 bg-secondary w-[40px] h-[30px] text-gray-50 hover:bg-black hover:text-secondary duration-200  p-1 rounded-sm" />
-               <MdArrowForwardIos onClick={RotacionSuma} className="cursor-pointer  my-2 bg-secondary w-[40px] h-[30px] text-gray-50 hover:bg-black hover:text-secondary duration-200  p-1 rounded-sm" />
-           
-         <div className={` fixed right-0 top-0 w-full h-full bg-[#0000007d] z-[40] ${!recordatorio && "hidden"}`}>
-            <div className="absolute right-0 mr-[18%] md:mr-[10%] mt-[20px] 2xl:mr-[20%] 2xl:mt-[50px]">
-               <img src={flecha} className="ml-auto w-[25%] rotate-180" alt="" />
-               <div className="bg-white text-black ml-auto w-[80%] md:w-[60%] pt-3 rounded-md">
-                  <p className="mx-1">Recuerda que puedes cambiar de pestaña con estos botones 😊👍</p>
-                  <form onSubmit={handleSubmit(recordatoriAceptado)} className="bg-secondary  py-1 flex justify-around items-center">
-                     <span>
-                        <label htmlFor="jamas" className="text-gray-50">
-                           Ya no recordar
-                        </label>
-                        <input type="checkbox" className="ml-2" {...register("noRecordar")} />
-                     </span>
-                     <button className="btn-secundario">Aceptar</button>
-                  </form>
+         {/* Wrapper externo: posiciona tabs+dots encima del Rotador sin que overflow los corte */}
+         <div className="w-[95%] mx-auto md:w-[73%] h-[90%] relative flex flex-col">
+
+            {/* Tab nav con pill deslizante — FUERA del Rotador */}
+            <div className="flex justify-center pt-3 pb-2 z-[60] flex-shrink-0">
+               <div className="relative flex p-1 rounded-xl" style={{background:'rgba(255,255,255,0.04)',backdropFilter:'blur(12px)',border:'1px solid rgba(255,255,255,0.07)'}}>
+                  {/* Pill deslizante */}
+                  <div
+                     className="absolute top-1 bottom-1 rounded-lg pointer-events-none"
+                     style={{
+                        width:`calc(${100/tabLabels.length}% - 2px)`,
+                        left:`calc(${activeIdx * (100/tabLabels.length)}% + 1px)`,
+                        background:'#22c55e',
+                        boxShadow:'0 4px 16px rgba(34,197,94,0.45)',
+                        transition:'left 0.38s cubic-bezier(0.4,0,0.2,1)',
+                     }}
+                  />
+                  {tabLabels.map((label, i) => {
+                     const id = i + 1;
+                     return (
+                        <button
+                           key={id}
+                           onClick={() => navigate(id)}
+                           className="relative z-10 px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wide"
+                           style={{
+                              color: SliderPrincipal === id ? '#fff' : '#6b7280',
+                              transition:'color 0.3s ease',
+                              background:'transparent',
+                              minWidth:'70px',
+                           }}
+                        >
+                           {label}
+                        </button>
+                     );
+                  })}
                </div>
             </div>
-         </div>
-           
+
+            {/* Rotador con overflow:hidden para que el slide quede dentro */}
+            <div ref={containerRef} className="Rotador relative flex-1 flex justify-center items-center" style={{overflow:'hidden',borderRadius:'20px'}}>
+               {memoPagesActive}
             </div>
 
-
-            {memoPagesActive}
-
-            <div className="absolute bottom-0    w-full flex justify-center items-center">
-               {
-               arrayComponet.map((p) => 
-                  (SliderPrincipal == p.id ? 
-                     <IoMdRadioButtonOn key={p.id}  className="w-6 h-6 text-secondary" /> : 
-                  <IoRadioButtonOff key={p.id} />))
-               }
+            {/* Dots con animacion — FUERA del Rotador */}
+            <div className="flex justify-center items-center gap-2 py-2 flex-shrink-0">
+               {arrayComponet.map((p) => (
+                  <span
+                     key={p.id}
+                     onClick={() => navigate(p.id)}
+                     className="cursor-pointer rounded-full block"
+                     style={{
+                        background: SliderPrincipal === p.id ? '#22c55e' : 'rgba(255,255,255,0.2)',
+                        width: SliderPrincipal === p.id ? '20px' : '6px',
+                        height: '6px',
+                        transition: 'width 0.38s cubic-bezier(0.4,0,0.2,1), background 0.3s ease',
+                     }}
+                  />
+               ))}
             </div>
          </div>
       </>
