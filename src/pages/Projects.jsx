@@ -10,7 +10,7 @@ import logoFigma from '../assets/images/proyectos/LOGOTASK.png'
 import pestanas from '../assets/images/proyectos/personaje finga.png'
 
 import fondoSAS from '../assets/images/proyectos/fondoSAS.png'
-import logoSAS from '../assets/images/proyectos/On Business LOGO.png'
+import logoSAS from '../assets/images/LOGO BASE PRODUCTOS-02.png'
 import personajeSAS from '../assets/images/proyectos/obBussnes Personaje.png'
 
 import { IoIosCloseCircle } from "react-icons/io"
@@ -27,9 +27,9 @@ const Projects = () => {
       personaje: personajeSAS,
       descripcion: "Punto de venta completo: inventario, ventas, devoluciones, reportes y multisucursal. Creado con React, TypeScript, Node.js, Express y PostgreSQL.",
       titulo: "SAS - Sistema de ventas",
-      tag: "2025",
+      tag: "2025-2026",
       stack: ['React','TypeScript','Node.js','PostgreSQL'],
-      page: "https://onbussines.netlify.app/"
+      page: "https://onbusiness.hionsolutions.com/"
     },
     {
       id: 2,
@@ -63,10 +63,10 @@ const Projects = () => {
         </div>
       )}
 
-      <div className='w-full h-full flex flex-col px-4 py-5 overflow-hidden'>
+      <div className='w-full h-full flex flex-col px-4 py-5 '>
        
         <div className='mb-4 flex-shrink-0'>
-          <span className='text-xs font-semibold tracking-widest uppercase' style={{color:'#22c55e'}}>+ PORTFOLIO</span>
+          <span className='text-xs font-semibold tracking-widest uppercase' style={{color:'#22c55e'}}> PORTFOLIO</span>
           <h2 className='text-white font-black text-2xl lg:text-3xl leading-tight'>
             Proyectos <span style={{color:'#22c55e'}}>Destacados</span>
           </h2>
@@ -74,14 +74,14 @@ const Projects = () => {
 
         <Galeria btnClose={() => setGalery(!gallery)} slideOpen={gallery} setPicture={setItem} />
 
-        <div className='flex flex-col gap-3 overflow-y-auto flex-1'>
+        <div className='flex flex-col gap-3 overflow-y-auto flex-1  pt-12'>
           {ArrayProyects.map(P => (
             <div key={P.id}
               className='rounded-xl mx-auto w-full my-1 sm:flex duration-300 group max-w-[800px] '
               style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.07)'}}>
 
              
-              <div className='w-[40%] max-w-[200px] my-auto min-w-[200px] h-[200px] rounded-[10px] relative mx-auto overflow-hidden'>
+              <div className='w-[40%] max-w-[200px] my-auto min-w-[200px] h-[200px] rounded-[10px] relative mx-auto '>
                 <img className='fondoProyect rounded-md duration-500 w-full h-full object-cover' src={P.imagenFondo} alt="" />
                 <img className='group-hover:top-[-30px] max-w-[75%] absolute right-0 left-0 top-[90px] m-auto duration-500' src={P.logo} alt="" />
                 <img className='group-hover:bottom-[40px] group-hover:opacity-100 h-[160px] absolute m-auto right-0 left-0 bottom-0 opacity-0 duration-500' src={P.personaje} alt="" />

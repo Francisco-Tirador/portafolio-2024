@@ -20,7 +20,7 @@ import mssql from '../assets/icon/mssqlLogo.jpeg'
 const SkillSection = ({ title, icons }) => (
   <div className='w-full mb-4'>
     <div className='flex items-center gap-3 mb-3 px-2'>
-      <span className='text-[10px] font-bold tracking-widest uppercase' style={{color:'#22c55e'}}>+ {title}</span>
+      <span className='text-[10px] font-bold tracking-widest uppercase' style={{color:'#22c55e'}}> {title}</span>
       <div className='flex-1 h-px' style={{background:'linear-gradient(90deg,rgba(34,197,94,0.3),transparent)'}}/>
     </div>
     <div className='flex flex-wrap gap-2 px-2'>
@@ -68,7 +68,7 @@ const Skills = () => {
     <div className='w-full h-full flex flex-col px-4 pb-5 overflow-y-auto'>
       {/* Header */}
       <div className='mb-5'>
-        <span className='text-xs font-semibold tracking-widest uppercase' style={{color:'#22c55e'}}>+ STACK</span>
+        <span className='text-xs font-semibold tracking-widest uppercase' style={{color:'#22c55e'}}> STACK</span>
         <h2 className='text-white font-black text-2xl lg:text-3xl leading-tight'>
           Habilidades &<br/><span style={{color:'#22c55e'}}>Tecnologias</span>
         </h2>

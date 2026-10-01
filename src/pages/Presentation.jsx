@@ -16,7 +16,7 @@ const Presentation = () => {
 
       <div className='sm:w-[55%] flex flex-col gap-4'>
         <div>
-          <span className='text-xs font-semibold tracking-widest uppercase' style={{color:'#22c55e'}}>+ SOBRE MI</span>
+          <span className='text-xs font-semibold tracking-widest uppercase' style={{color:'#22c55e'}}> SOBRE MI</span>
           <h1 className='text-white font-black text-3xl lg:text-4xl leading-tight mt-1'>
             Hola, soy<br/><span style={{color:'#22c55e'}}>Francisco</span> Beltran
           </h1>
@@ -28,13 +28,13 @@ const Presentation = () => {
         </p>
 
        
-        <div className='flex flex-wrap gap-2'>
+        {/* <div className='flex flex-wrap gap-2'>
           {['Web Apps','Mobile','UI/UX Design','Backend'].map(tag=>(
             <span key={tag} className='text-xs px-3 py-1 rounded-full font-medium' style={{background:'rgba(34,197,94,0.1)',color:'#4ade80',border:'1px solid rgba(34,197,94,0.2)'}}>
               + {tag}
             </span>
           ))}
-        </div>
+        </div> */}
 
         <a href={urlCuriiculum} target='_blank'>
           <button className='btn-secundario inline-flex items-center gap-2'>

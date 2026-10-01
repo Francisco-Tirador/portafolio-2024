@@ -28,7 +28,7 @@ const Contact = ({ alert }) => {
     <div className='w-full h-full flex flex-col px-4 py-5'>
     
       <div className='mb-5 flex-shrink-0'>
-        <span className='text-xs font-semibold tracking-widest uppercase' style={{color:'#22c55e'}}>+ CONTACTO</span>
+        <span className='text-xs font-semibold tracking-widest uppercase' style={{color:'#22c55e'}}> CONTACTO</span>
         <h2 className='text-white font-black text-2xl lg:text-3xl leading-tight'>
           Hablemos de<br/><span style={{color:'#22c55e'}}>tu proyecto</span>
         </h2>
