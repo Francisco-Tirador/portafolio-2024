@@ -3,7 +3,7 @@ import './App.css'
 import { ContenPages } from './pages/ContenPages'
 import Header from './components/Header'
 
-export const urlCuriiculum="../public/Francisco_Beltran_CV.pdf"
+export const urlCuriiculum="./Francisco_Beltran_CV.pdf"
 
 function App() {
   
