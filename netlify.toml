@@ -1,0 +1,31 @@
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Security headers aplicados a todas las rutas.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Evita sea embebido en un iframe (clickjacking).
+    X-Frame-Options = "SAMEORIGIN"
+
+    # Evita que el navegador "adivine" el content-type (MIME sniffing).
+    X-Content-Type-Options = "nosniff"
+
+    # Controla cuánta info de referrer se envía al navegar fuera del sitio.
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Desactiva APIs que no usas y permite solo cámara (para el escáner QR/barcode).
+    Permissions-Policy = "camera=(self), microphone=(), geolocation=(), payment=()"
+
+    # HSTS: fuerza HTTPS. Netlify ya lo pone, pero lo dejamos explícito.
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+    # --- Content-Security-Policy ---
+    # OJO: el CSP es el header que más rompe. La línea de abajo es un punto de
+    # partida permisivo. Debes reemplazar los dominios de ejemplo por los tuyos
+    # reales (tu API de axios/socket.io) y PROBAR pagos + escaneo + login antes
+    # de dejarlo fijo. Descomenta cuando lo hayas validado:
+    #
+    # Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://sdk.mercadopago.com https://http2.mlstatic.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; connect-src 'self' https://api.mercadopago.com https://TU-API.com wss://TU-API.com; frame-src 'self' https://*.mercadopago.com; font-src 'self' data:; worker-src 'self' blob:; object-src 'none'; base-uri 'self'"

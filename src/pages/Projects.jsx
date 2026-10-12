@@ -25,7 +25,7 @@ const Projects = () => {
       imagenFondo: fondoSAS,
       logo: logoSAS,
       personaje: personajeSAS,
-      descripcion: "Punto de venta completo: inventario, ventas, devoluciones, reportes y multisucursal. Creado con React, TypeScript, Node.js, Express y PostgreSQL.",
+      descripcion: "Punto de venta completo: inventario, ventas, devoluciones, reportes y multisucursal. Creado con React, TypeScript, Node.js, Express y PostgreSQL. (Este es un proyecto personal)",
       titulo: "SAS - Sistema de ventas",
       tag: "2025-2026",
       stack: ['React','TypeScript','Node.js','PostgreSQL'],
